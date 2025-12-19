@@ -1,0 +1,105 @@
+.navbar {
+  height: 100vh;
+  width: 100%;
+  padding: var(--mantine-spacing-md);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mantine-color-blue-filled);
+  transition: width 0.2s ease;
+}
+
+.navbarCollapsed {
+  width: 80px;
+}
+
+.navbarMain {
+  flex: 1;
+}
+
+.header {
+  padding-bottom: var(--mantine-spacing-md);
+  margin-bottom: calc(var(--mantine-spacing-md) * 1.5);
+  border-bottom: 1px solid var(--mantine-color-blue-7);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mantine-spacing-xs);
+}
+
+.version {
+  background-color: var(--mantine-color-blue-7);
+  color: var(--mantine-color-white);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-white);
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
+  border-radius: var(--mantine-radius-sm);
+  font-weight: 500;
+  margin-bottom: var(--mantine-spacing-xs);
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  min-height: 50px;
+
+  @mixin hover {
+    background-color: var(--mantine-color-blue-7);
+    color: var(--mantine-color-white);
+
+    .linkIcon {
+      color: var(--mantine-color-white);
+    }
+  }
+
+  &[data-active] {
+    &,
+    &:hover {
+      box-shadow: var(--mantine-shadow-sm);
+      background-color: var(--mantine-color-white);
+      color: var(--mantine-color-blue-filled);
+
+      .linkIcon {
+        color: var(--mantine-color-blue-filled);
+      }
+    }
+  }
+}
+
+.linkIcon {
+  color: var(--mantine-color-blue-1);
+  margin-right: var(--mantine-spacing-sm);
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+}
+
+/* When navbar is collapsed, center the icon and remove margin */
+.link[data-collapsed] {
+  justify-content: center;
+  padding: var(--mantine-spacing-xs);
+}
+
+.link[data-collapsed] .linkIcon {
+  margin-right: 0;
+}
+
+/* Collapsed navbar specific styles */
+.navbarCollapsed .header {
+  justify-content: center;
+  padding-bottom: var(--mantine-spacing-sm);
+}
+
+.navbarCollapsed .navbarMain {
+  margin-top: 0;
+}
+
+.navbarCollapsed .footer {
+  align-items: center;
+}

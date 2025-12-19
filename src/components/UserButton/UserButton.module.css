@@ -1,0 +1,20 @@
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    border-radius: var(--mantine-radius-md);
+    padding: var(--mantine-spacing-sm);
+    color: var(--mantine-color-white);
+
+    @mixin hover {
+        background-color: var(--mantine-color-white);
+        color: var(--mantine-color-gray-9);
+    }
+}
+
+/* When collapsed, center the avatar */
+.user[data-collapsed] {
+    justify-content: center;
+    padding: var(--mantine-spacing-xs);
+}
