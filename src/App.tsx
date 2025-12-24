@@ -11,6 +11,7 @@ import { cssVariablesResolver, theme } from "./theme";
 import { FinishRegistrationPage } from "./pages/FinishRegistration.page";
 import { AuthLoginPage } from "./pages/AuthLogin.page";
 import { AuthCallbackPage } from "./pages/AuthCallback.page";
+import { SplashPage } from "./pages/Splash.page";
 
 export default function App() {
   return (
@@ -30,7 +31,7 @@ export default function App() {
         <BrowserRouter>
           <AuthProvider>
             <Routes>
-              <Route path="/" element={<FinishRegistrationPage />} />
+              <Route path="/" element={<SplashPage />} />
               <Route path="/register" element={<FinishRegistrationPage />} />
               <Route path="/auth/login" element={<AuthLoginPage />} />
               <Route path="/auth/callback" element={<AuthCallbackPage />} />
